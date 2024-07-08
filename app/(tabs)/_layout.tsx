@@ -32,6 +32,15 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="stickerSmash"
+        options={{
+          title: 'Sticker Smash',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'image' : 'image-outline'} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
