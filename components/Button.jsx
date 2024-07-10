@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text } from 'react-native';
+import { StyleSheet, View, Pressable, Text, Dimensions} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function Button({ label, theme, onPress}) {
@@ -30,15 +30,16 @@ export default function Button({ label, theme, onPress}) {
   );
 }
 
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 320,
-    height: 68,
-    marginHorizontal: 20,
+    width: width * 0.8,
+    height: height * 0.08,
+    marginHorizontal: width * 0.05,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 3,
+    padding: height * 0.004,
   },
   button: {
     borderRadius: 10,
@@ -47,12 +48,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+    paddingHorizontal: width * 0.04,
   },
   buttonIcon: {
-    paddingRight: 8,
+    paddingRight: width * 0.02,
   },
   buttonLabel: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: height * 0.02,
+    flexShrink: 1,
+    fontWeight: 'bold' ,
   },
 });
